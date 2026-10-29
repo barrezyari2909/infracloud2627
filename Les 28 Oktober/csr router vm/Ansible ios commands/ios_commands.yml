@@ -1,0 +1,30 @@
+---
+- name: vergelijk basis config met huidige config
+  hosts: routers
+  gather_facts: no
+  connection: network_cli
+
+  vars:
+    intended_config_path: "baseline/yari-baseline.conf"
+
+  tasks:
+    - name: ophalen lopende config
+      cisco.ios.ios_command:
+        commands:
+          - "show running-config"
+      register: running
+
+    - name: toon running-config
+      ansible.builtin.debug:
+        msg: "{{ running.stdout_lines[0] }}"
+
+    - name: vergelijk met baseline
+      cisco.ios.ios_config:
+        src: "{{ intended_config_path }}"
+      check_mode: true
+      diff: true
+      register: vergelijking
+
+    - name: toon verschillen
+      ansible.builtin.debug:
+        var: vergelijking.diff
