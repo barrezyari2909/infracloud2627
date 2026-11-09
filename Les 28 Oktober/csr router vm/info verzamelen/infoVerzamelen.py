@@ -1,4 +1,5 @@
 from netmiko import ConnectHandler
+import datetime
 
 v_device_type = "cisco_ios"
 v_host = "192.168.56.20"
@@ -8,7 +9,7 @@ v_password = "cisco123"
 
 device = {
     "device_type": v_device_type,
-    "host":v_host,
+    "host": v_host,
     "username": v_username,
     "password": v_password,
     "secret": v_password,
@@ -16,6 +17,14 @@ device = {
 
 connection = ConnectHandler(**device)
 connection.enable()
+
+now = datetime.datetime.now()
+
+print("Datum van runnen script")
+print("-----------------------")
+print(now)
+print("")
+
 
 print("Device Information")
 print("------------------")
@@ -86,11 +95,6 @@ print("Total interfaces:", aantal_interfaces)
 
 print("Connected Devices (CDP Neighbors)")
 print("---------------------------------")
-
-
-
-
-
 print("Routing Table")
 print("-------------")
 

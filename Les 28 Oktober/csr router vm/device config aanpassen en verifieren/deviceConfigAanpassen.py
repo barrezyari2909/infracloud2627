@@ -1,4 +1,5 @@
 from netmiko import ConnectHandler
+import datetime
 
 v_device_type = "cisco_ios"
 v_host = "192.168.56.20"
@@ -23,6 +24,13 @@ config_commands = [
 ]
 
 output = connection.send_config_set(config_commands)
+
+now = datetime.datetime.now()
+
+print("Datum van runnen script")
+print("-----------------------")
+print(now)
+print("")
 print(output)
 
 connection.save_config()

@@ -3,10 +3,10 @@ all:
     routers:
       hosts:
         r1:
-          ansible_host: 10.10.20.1
+          ansible_host: 192.168.56.20
       vars:
         ansible_connection: ansible.netcommon.network_cli
         ansible_network_os: cisco.ios.ios
-        ansible_user: cisco
-        ansible_password: cisco
+        ansible_user: yari
+        ansible_password: cisco123
         ansible_port: 22
