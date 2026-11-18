@@ -1,0 +1,28 @@
+Device Information
+------------------
+Hostname: yari
+Model: C8000V
+Serial Number: 9KVWY9X3LCM
+
+Software Information
+--------------------
+IOS Version: Version 17.15.01a
+System uptime: 4 hours, 25 minutes
+
+Interface
+---------
+GigabitEthernet1 up
+GigabitEthernet2 up
+GigabitEthernet3 down
+GigabitEthernet4 down
+Total interfaces: 4
+
+Connected Devices (CDP Neighbors)
+---------------------------------
+
+Routing Table
+-------------
+L via BGP
+0.0.0.0/0 via 10.10.20.254
+10.10.20.0/24 via GigabitEthernet1
+10.123.0.0/24 via GigabitEthernet2

@@ -1,4 +1,3 @@
----
 - name: Collect selected facts from IOS XE device
   hosts: all
   connection: network_cli
@@ -16,4 +15,3 @@
       ansible.builtin.copy:
         content: "{{ ios_facts | to_nice_json }}"
         dest: "./router_facts.txt"
-      

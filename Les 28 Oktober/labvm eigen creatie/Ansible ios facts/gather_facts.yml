@@ -1,0 +1,19 @@
+---
+- name: Collect selected facts from IOS XE device
+  hosts: all
+  connection: network_cli
+  gather_facts: no
+
+  tasks:
+    - name: Get hardware and interfaces only
+      cisco.ios.ios_facts:
+        gather_subset:
+          - hardware
+          - interfaces
+      register: ios_facts
+
+    - name: Save facts to file
+      ansible.builtin.copy:
+        content: "{{ ios_facts | to_nice_json }}"
+        dest: "./router_facts.txt"
+      

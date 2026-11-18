@@ -1,0 +1,111 @@
+{
+    "ansible_facts": {
+        "ansible_net_all_ipv4_addresses": [
+            "10.10.20.1",
+            "10.123.0.1"
+        ],
+        "ansible_net_all_ipv6_addresses": [],
+        "ansible_net_api": "cliconf",
+        "ansible_net_cpu_utilization": {
+            "core": {
+                "five_minutes": 0,
+                "five_seconds": 1,
+                "five_seconds_interrupt": 0,
+                "one_minute": 0
+            }
+        },
+        "ansible_net_filesystems": [
+            "bootflash:"
+        ],
+        "ansible_net_filesystems_info": {
+            "bootflash:": {
+                "spacefree_kb": 3887872.0,
+                "spacetotal_kb": 5052064.0
+            }
+        },
+        "ansible_net_gather_network_resources": [],
+        "ansible_net_gather_subset": [
+            "hardware",
+            "interfaces",
+            "default"
+        ],
+        "ansible_net_hostname": "yari",
+        "ansible_net_image": "bootflash:packages.conf",
+        "ansible_net_interfaces": {
+            "GigabitEthernet1": {
+                "bandwidth": 1000000,
+                "description": null,
+                "duplex": "Full",
+                "ipv4": [
+                    {
+                        "address": "10.10.20.1",
+                        "subnet": "24"
+                    }
+                ],
+                "lineprotocol": "up",
+                "macaddress": "5254.0018.5a52",
+                "mediatype": "Virtual",
+                "mtu": 1500,
+                "operstatus": "up",
+                "type": "vNIC"
+            },
+            "GigabitEthernet2": {
+                "bandwidth": 1000000,
+                "description": null,
+                "duplex": "Full",
+                "ipv4": [
+                    {
+                        "address": "10.123.0.1",
+                        "subnet": "24"
+                    }
+                ],
+                "lineprotocol": "up",
+                "macaddress": "5254.000c.fd73",
+                "mediatype": "Virtual",
+                "mtu": 1500,
+                "operstatus": "up",
+                "type": "vNIC"
+            },
+            "GigabitEthernet3": {
+                "bandwidth": 1000000,
+                "description": null,
+                "duplex": "Full",
+                "ipv4": [],
+                "lineprotocol": "down",
+                "macaddress": "5254.0009.208a",
+                "mediatype": "Virtual",
+                "mtu": 1500,
+                "operstatus": "administratively down",
+                "type": "vNIC"
+            },
+            "GigabitEthernet4": {
+                "bandwidth": 1000000,
+                "description": null,
+                "duplex": "Full",
+                "ipv4": [],
+                "lineprotocol": "down",
+                "macaddress": "5254.0003.a6c3",
+                "mediatype": "Virtual",
+                "mtu": 1500,
+                "operstatus": "administratively down",
+                "type": "vNIC"
+            }
+        },
+        "ansible_net_iostype": "IOS-XE",
+        "ansible_net_memfree_mb": 1429.4992790222168,
+        "ansible_net_memtotal_mb": 1625.0975875854492,
+        "ansible_net_model": "C8000V",
+        "ansible_net_neighbors": {},
+        "ansible_net_operatingmode": "autonomous",
+        "ansible_net_python_version": "3.14.4",
+        "ansible_net_serialnum": "9KVWY9X3LCM",
+        "ansible_net_system": "ios",
+        "ansible_net_version": "17.15.01a",
+        "ansible_network_resources": {}
+    },
+    "changed": false,
+    "failed": false,
+    "warnings": [
+        "ansible-pylibssh not installed, falling back to paramiko"
+    ]
+}
