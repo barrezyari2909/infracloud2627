@@ -1,10 +1,11 @@
 from netmiko import ConnectHandler
+from netmiko.ssh_exception import NetMikoAuthenticationException, NetMikoTimeoutException
 
-v_device_type = "cisco_ios"
-v_host = "10.10.20.1"
+v_device_type = "linux"
+v_host = "192.168.56.103"
 v_ssh_port = 22
-v_username = "cisco"
-v_password = "cisco"
+v_username = "yari"
+v_password = "yari"
 
 device = {
     "device_type": v_device_type,
@@ -14,15 +15,14 @@ device = {
     "secret": v_password,
 }
 
-connection = ConnectHandler(**device)
-connection.enable()
+try:
+    print(f"connecting to {v_host}:{v_ssh_port}")
+    with ConnectHandler(**device) as connection:
+        print("Connected successfully!")
 
-config_commands = [
-    "service password-encryption",
-    "banner motd #afblijven#"
-]
-
-output = connection.send_config_set(config_commands)
-print(output)
-
-connection.save_config()
+except NetMikoTimeoutException:
+    print("connection timeout occurred")
+except NetMikoAuthenticationException:
+    print("authentication failed check user and password")
+except Exception as e:
+    print(f"an error occurred {e}")
