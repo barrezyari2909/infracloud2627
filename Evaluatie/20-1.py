@@ -23,7 +23,6 @@ spaces = [r for r in antwoord.json()["items"] if r["title"] == TITEL]
 if not spaces:
     sys.exit(f"Geen space gevonden met de titel '{TITEL}'.")
 
-# 3. Elke gevonden space verwijderen
 for space in spaces:
     antwoord = requests.delete(f"{URL}/{space['id']}", headers=headers, timeout=30)
     if antwoord.status_code == 204:

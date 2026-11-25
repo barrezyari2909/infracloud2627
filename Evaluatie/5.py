@@ -1,6 +1,5 @@
 from netmiko import ConnectHandler
 
-# Verbindingsparameters (opdracht 3)
 router = {
     "device_type": "cisco_ios",
     "host": "192.168.56.20",
