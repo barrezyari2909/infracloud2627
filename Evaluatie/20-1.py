@@ -9,15 +9,13 @@ if not TOKEN:
 TITEL = "CCNA Automation Test Space"
 URL = "https://webexapis.com/v1/rooms"
 headers = {"Authorization": f"Bearer {TOKEN}"}
-
-# 1. Alle spaces ophalen
+     
 antwoord = requests.get(URL, headers=headers, timeout=30)
 print("Spaces ophalen, statuscode:", antwoord.status_code)
 
 if antwoord.status_code != 200:
     sys.exit(f"Fout: {antwoord.text}")
 
-# 2. Spaces met de juiste titel zoeken
 spaces = [r for r in antwoord.json()["items"] if r["title"] == TITEL]
 
 if not spaces:
